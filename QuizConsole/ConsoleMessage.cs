@@ -6,7 +6,7 @@ namespace QuizConsole
 {
     public class ConsoleMessage
     {
-        public static string WelcomeMessage()
+        public string WelcomeMessage()
         {
             Console.WriteLine("Hello user welcome to my quize game");
             Console.WriteLine("What is your name: ");

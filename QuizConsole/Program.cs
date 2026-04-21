@@ -9,6 +9,10 @@
 
             ConsoleMessage question = new ConsoleMessage();
 
+            string userName = question.WelcomeMessage();
+
+            Console.WriteLine($"Welcome, {userName}");
+
             string answerOne = question.QuestionOne();
             string answerTwo = question.QuestionTwo();
             string answerThree = question.QuestionThree();
@@ -22,7 +26,7 @@
                 wrong++;
             }
 
-            if (answerTwo.ToLower() == "Paris")
+            if (answerTwo.ToLower() == "paris")
             {
                 correct++;
             }
