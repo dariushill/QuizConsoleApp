@@ -11,38 +11,30 @@ namespace QuizConsole
             Console.WriteLine("Hello user welcome to my quize game");
             Console.WriteLine("What is your name: ");
 
-            string userName = Console.ReadLine();
+            string? userName = Console.ReadLine();
 
             return userName;
         }
 
-        public string QuestionOne()
+
+        public bool AskQuestion(string question, string correctAnswer)
         {
+            bool correct = false;
+            Console.WriteLine(question);
+            string? userAnswer = Console.ReadLine();
 
-            Console.WriteLine("What is 2 + 2?");
+            if (userAnswer?.ToLower() == correctAnswer.ToLower())
+            {
+                Console.WriteLine("Correct!");
+                correct = true;
+            }
+            else
+            {
+                Console.WriteLine($"Wrong! The correct answer is {correctAnswer}");
+                correct = false;
+            }
 
-            string userAnswer = Console.ReadLine();
-
-            return userAnswer;
-
-        }
-
-        public string QuestionTwo()
-        {
-            Console.WriteLine("What is the capital of France?");
-
-            string userAnswer = Console.ReadLine();
-
-            return userAnswer;
-        }
-
-        public string QuestionThree()
-        {
-            Console.WriteLine("What is 5 * 3?");
-
-            string userAnswer = Console.ReadLine();
-
-            return userAnswer;
+            return correct;
         }
 
         public void Results(int correct, int wrong)
