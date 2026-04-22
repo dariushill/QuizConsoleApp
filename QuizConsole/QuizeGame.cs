@@ -4,11 +4,11 @@ using System.Text;
 
 namespace QuizConsole
 {
-    public class ConsoleMessage
+    public class QuizeGame
     {
         public string WelcomeMessage()
         {
-            Console.WriteLine("Hello user welcome to my quize game");
+            Console.WriteLine("Hello user welcome to my quiz game");
             Console.WriteLine("What is your name: ");
 
             string? userName = Console.ReadLine();
@@ -26,21 +26,19 @@ namespace QuizConsole
             if (userAnswer?.ToLower() == correctAnswer.ToLower())
             {
                 Console.WriteLine("Correct!");
-                correct = true;
+                return true;
             }
             else
             {
                 Console.WriteLine($"Wrong! The correct answer is {correctAnswer}");
-                correct = false;
+                return false;
             }
 
-            return correct;
         }
 
-        public void Results(int correct, int wrong)
+        public void Results(int score, int questions)
         {
-            Console.WriteLine($"you have {correct} questions correct.");
-            Console.WriteLine($"you have {wrong} questions wrong");
+            Console.WriteLine($"Score: {score / questions}");
         }
     }
 }
